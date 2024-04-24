@@ -1,22 +1,22 @@
-public class RunningState : GroundedState
+public class WalkState : GroundedState
 {
-    private readonly RunningStateConfig _config;
+    private readonly WalkStateConfig _config;
 
-    public RunningState(IStateSwitcher stateSwitcher, StateMachineData data, Character character) : base(stateSwitcher, data, character)
-        => _config = character.Config.RunningStateConfig;
+    public WalkState(IStateSwitcher stateSwitcher, StateMachineData data, Character character) : base(stateSwitcher, data, character)
+        => _config = character.Config.WalkStateConfig;
 
     public override void Enter()
     {
         base.Enter();
 
-        Data.Speed = _config.Speed;
+        Data.Speed = _config.WalkSpeed;
 
         View.StartRunning();
     }
 
     public override void Exit()
     {
-        base.Exit(); 
+        base.Exit();
 
         View.StopRunning();
     }
@@ -29,7 +29,7 @@ public class RunningState : GroundedState
             StateSwitcher.SwitchState<IdlingState>();
         else if(IsPressShift())
             StateSwitcher.SwitchState<FastRunningState>();
-        else if(IsPressCtrl())
-            StateSwitcher.SwitchState<WalkState>();
+        else
+            StateSwitcher.SwitchState<RunningState>();
     }
 }

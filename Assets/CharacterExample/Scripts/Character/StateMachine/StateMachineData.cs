@@ -7,6 +7,8 @@ public class StateMachineData
 
     private float _speed;
     private float _xInput;
+    private float _shiftInput;
+    private float _walkInput;
 
     public float XInput
     {
@@ -30,5 +32,17 @@ public class StateMachineData
 
             _speed = value;
         }
+    }
+
+    public float ShiftInput
+    {
+        get => _shiftInput;
+        set => _shiftInput = value;
+    }
+
+    public float WalkInput
+    {
+        get => _walkInput;
+        set => _walkInput = value;
     }
 }

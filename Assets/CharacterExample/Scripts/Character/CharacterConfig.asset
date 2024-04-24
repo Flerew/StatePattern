@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _runningStateConfig:
     <Speed>k__BackingField: 8
+  _fastRunningStateConfig:
+    <FastSpeed>k__BackingField: 15
   _airborneStateConfig:
     _jumpingStateConfig:
       _maxHeight: 4
       _timeToReachMaxHeight: 0.5
     _speed: 5
+  _walkStateConfig:
+    <WalkSpeed>k__BackingField: 5
